@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+    <title>Bill</title>
+</head>
+<body>
+    <style>
+    .invoice-box {
+        max-width: 800px;
+        margin: auto;
+        padding: 30px;
+        border: 1px solid #eee;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+        font-size: 16px;
+        line-height: 24px;
+        font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        color: #555;
+    }
+    
+    .invoice-box table {
+        width: 100%;
+        line-height: inherit;
+        text-align: left;
+    }
+    
+    .invoice-box table td {
+        padding: 5px;
+        vertical-align: top;
+    }
+    
+    .invoice-box table tr td:nth-child(2) {
+        
+        margin-right: 20px;
+    }
+    
+    .invoice-box table tr.top table td {
+        padding-bottom: 20px;
+    }
+    
+    .invoice-box table tr.top table td.title {
+        font-size: 45px;
+        line-height: 45px;
+        color: #333;
+    }
+    
+    .invoice-box table tr.information table td {
+        padding-bottom: 40px;
+    }
+    
+    .invoice-box table tr.heading td {
+        background: #eee;
+        border-bottom: 1px solid #ddd;
+        font-weight: bold;
+    }
+    
+    .invoice-box table tr.details td {
+        padding-bottom: 20px;
+    }
+    
+    .invoice-box table tr.item td{
+        border-bottom: 1px solid #eee;
+    }
+    
+    .invoice-box table tr.item.last td {
+        border-bottom: none;
+    }
+    
+    .invoice-box table tr.total td:nth-child(2) {
+        border-top: 2px solid #eee;
+        font-weight: bold;
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .invoice-box table tr.top table td {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+        
+        .invoice-box table tr.information table td {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+    }
+    
+    /** RTL **/
+    .rtl {
+        direction: rtl;
+        font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    }
+    
+    .rtl table {
+        text-align: right;
+    }
+    
+    .rtl table tr td:nth-child(2) {
+        text-align: left;
+    }
+
+    .btnrow{
+        padding-left: 100px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .total{
+        padding: 20px;
+        font-size: 25px;
+    }
+    .heading{
+        font-size: 20px;
+    }
+    .corner{
+        padding: 15px;
+    }
+    </style>
+<body>
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td class="title">
+    
+                            </td>
+                            
+                            <td>
+                            <form>
+        <div class="corner" >Bill Number: <input type="text"></input></div> 
+        <div class="corner" >  Date: <input type="text"></input><br></div>
+        <div class="corner" >  Due: <input type="text"></input> </div>
+                            </form>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr class="information">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td>
+                                Balupar Lane,<br>
+                                Near State Bank Coloney,<br>
+                                Bihar, Patna 800010
+                            </td>
+                            
+                            <td>
+                                RK Departmental Store<br>
+                                RK<br>
+                                Website
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr class="heading">
+                <td>
+                    Payment Method
+                </td>
+                
+                <td>
+                    <form action="">
+                        <input type="text"></input>
+                    </form>
+                </td>
+            </tr>
+            
+            <tr class="details">
+                <td>
+                    Payment
+                </td>
+                
+                <td>
+                    <form action="">
+                        <input type="text"></input>
+                    </form>
+                </td>
+            </tr>
+            
+            <tr class="heading">
+                <td>
+                </t>Item
+                </td>
+                
+                <td>
+                    Quantity
+                </td>
+
+                <td>
+                    Price
+                </td>
+            </tr>
+        </table>
+           
+        
+        <TABLE id="dataTable" width="350px" border="1">
+            <TR>
+                <TD><INPUT type="checkbox" name="chk"/></TD>
+                <TD><INPUT type="text" placeholder="Item" name="txt"/></TD>
+                <TD>
+                    <INPUT type="text" placeholder="Quantity" name="txt"/>
+                </TD>
+                <TD>
+                    <INPUT type="text" name="txt" placeholder="Cost" class="txt" autocomplete='off'/>
+                </TD>
+            </TR>
+        </TABLE>
+        <section class="btnrow">
+            <INPUT  type="button" value="Add Row" onclick="addRow('dataTable')" />
+    
+            <INPUT  type="button" value="Delete Row" onclick="deleteRow('dataTable')" />
+        </section>
+            <tr class="total">
+                <td></td>
+                
+                <td>
+
+                    <div class="total">Total: <span id="sum"></span></div>
+                </td>
+            </tr>
+            <button style="-webkit-box-shadow: none!important;
+            box-shadow: none!important;" onclick="window.print()" type="submit" class="btn btn-outline-primary">Generate Bill</button>
+    </div>
+    
+    <SCRIPT language="javascript">
+        function addRow(tableID) {
+    
+            var table = document.getElementById(tableID);
+    
+            var rowCount = table.rows.length;
+            var row = table.insertRow(rowCount);
+    
+            var colCount = table.rows[0].cells.length;
+    
+            for(var i=0; i<colCount; i++) {
+    
+                var newcell	= row.insertCell(i);
+    
+                newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+                //alert(newcell.childNodes);
+                switch(newcell.childNodes[0].type) {
+                    case "text":
+                            newcell.childNodes[0].value = "";
+                            break;
+                    case "checkbox":
+                            newcell.childNodes[0].checked = false;
+                            break;
+                    case "select-one":
+                            newcell.childNodes[0].selectedIndex = 0;
+                            break;
+                }
+            }
+        }
+    
+        function deleteRow(tableID) {
+            try {
+            var table = document.getElementById(tableID);
+            var rowCount = table.rows.length;
+    
+            for(var i=0; i<rowCount; i++) {
+                var row = table.rows[i];
+                var chkbox = row.cells[0].childNodes[0];
+                if(null != chkbox && true == chkbox.checked) {
+                    if(rowCount <= 1) {
+                        alert("Cannot delete all the rows.");
+                        break;
+                    }
+                    table.deleteRow(i);
+                    rowCount--;
+                    i--;
+                }
+    
+    
+            }
+            }catch(e) {
+                alert(e);
+            }
+        }
+
+        function calculateSum() {
+    var sum = 0;
+    //iterate through each textboxes and add the values
+    $(".txt").each(function () {
+
+        //add only if the value is number
+        if (!isNaN(this.value) && this.value.length != 0) {
+            sum += parseFloat(this.value);
+        }
+
+    });
+    //.toFixed() method will roundoff the final sum to 2 decimal places
+    $("#sum").html(sum.toFixed(2));
+}
+$(".addRow").on("click", addRow);
+
+$("table").on("keyup", ".txt", function () {
+    calculateSum();
+});
+    </SCRIPT>
+</body>
+</html>
