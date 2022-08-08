@@ -5,7 +5,7 @@ mongoose=require("mongoose"),
 app = express();
 
 mongoose.connect("mongodb://localhost/store_management");
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -19,6 +19,7 @@ var storeSchema = new mongoose.Schema({
     costPrice: Number,
     sellPrice: Number
 });
+
 var Item = mongoose.model("Item", storeSchema);
 
 app.get("/", function(req,res){
